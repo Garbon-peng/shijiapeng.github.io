@@ -3,22 +3,30 @@
 		<div class="post-title">Category - <span id='category-name'></span></div>
 	</header>
 
-	<div class="post-content">
-		{%- if site.posts.size > 0 -%}
-		<ul class="post-list">
-			{%- for post in site.posts -%}
-			<li class="post-list-item post-category-{{post.categories}}">
-				<!-- {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%} -->
-				{%- assign date_format = "%Y/%m/%d" -%}
-				<span class="post-date">{{ post.date | date: date_format }}</span>
-				<a class="post-link" href="{{ post.url | relative_url }}">
-					{{ post.title | escape }}
-				</a>
-				{%- if site.show_excerpts -%}{{ post.excerpt }}{%- endif -%}
-			</li>
-		  	{%- endfor -%}
-		</ul>
-	  	{%- endif -%}
+	<div class="post-grid">
+		{%- for post in site.posts -%}
+		<div class="post-list-item post-category-{{post.categories}}">
+			<div class="post-container">
+				<div class="post-card">
+					<h3 class="post-project-title">
+						<a class="post-link" href="{{ post.url | relative_url }}">
+							{{ post.title | escape }}
+						</a>
+					</h3>
+	
+					{%- if post.image -%}
+					<a class="post-link" href="{{ post.url | relative_url }}">
+						<img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="post-image">
+					</a>
+					{%- endif -%}
+	
+					{%- if post.excerpt -%}
+					<p class="post-excerpt">{{ post.excerpt }}</p>
+					{%- endif -%}
+				</div>
+			</div>
+		</div>
+		{%- endfor -%}
 	</div>
 </article>
 

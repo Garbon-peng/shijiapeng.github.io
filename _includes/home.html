@@ -4,38 +4,49 @@
   </header>
 
   <div class="post-content">
-    {%- if site.posts.size > 0 -%}
-    <div class="post-grid">
-      {%- for post in site.posts -%}
-      <div class="post-container">
-        <div class="post-card">
-          <h3 class="post-project-title">
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
-            </a>
-          </h3>
+    {%- assign all_categories = "" | split: "" -%}
 
-          {%- if post.image -%}
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="post-image">
-          </a>
-          {%- endif -%}
+    {%- assign all_categories = "DE,ML,DS,SDE" | split: "," -%}
 
-          {%- if post.excerpt -%}
-          <p class="post-excerpt">{{ post.excerpt }}</p>
-          {%- endif -%}
-        </div>
-
-        {%- if post.categories -%}
-        <div class="post-categories">
-          {%- for category in post.categories -%}
-          <span class="category-tag category-{{ category | slugify }}">{{ category }}</span>
-          {%- endfor -%}
-        </div>
-        {%- endif -%}
-      </div>
+    {%- for post in site.posts -%}
+      {%- for category in post.categories -%}
+        {%- unless all_categories contains category -%}
+          {%- assign all_categories = all_categories | push: category -%}
+        {%- endunless -%}
       {%- endfor -%}
-    </div>
-    {%- endif -%}
+    {%- endfor -%}
+
+    {%- for category in all_categories -%}
+    <section class="category-section">
+      <h2 class="category-title">{{ category }}</h2>
+
+      <div class="post-grid">
+        {%- for post in site.posts -%}
+          {%- if post.categories contains category -%}
+          <div class="post-container">
+            <div class="post-card">
+              <h3 class="post-project-title">
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                  {{ post.title | escape }}
+                </a>
+              </h3>
+
+              {%- if post.image -%}
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="post-image">
+              </a>
+              {%- endif -%}
+
+              {%- if post.excerpt -%}
+              <p class="post-excerpt">{{ post.excerpt }}</p>
+              {%- endif -%}
+            </div>
+          </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </section>
+    {%- endfor -%}
+
   </div>
 </article>
