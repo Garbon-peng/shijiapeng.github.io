@@ -22,9 +22,9 @@ title: Jiapeng
 email: jpeng.shi2000@gmail.com 
 description: >- # this means to ignore newlines until "baseurl:"
   "The end of all our exploring will be arrive where we started."
-# url: "https://garbon-peng.github.io/shijiapeng.github.io/"          # your host, for absolute URL
-# baseurl: ""
-# github_repo: "https://garbon-peng.github.io/shijiapeng.github.io.git"
+url: "https://shijiapeng.github.io/"          # your host, for absolute URL
+baseurl: ""
+github_repo: "https://shijiapeng.github.io.git"
 highlighter: rouge
 svg:
   optimize: true
