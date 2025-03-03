@@ -28,9 +28,12 @@ permalink: /about/
 ---
 **Machine Learning Engineering Intern** <span style="float: right;">2024.05 - 2024.08</span>  
 *WealthyPlanet Financial Holdings Inc., Burlington, ON, Canada*  
-- Enhanced Abi AI Assistant with new decision-making policies and initialization module upgrades using Python.  
-- Designed **gRPC** interfaces between Abi and backend, conducted **unit and integration testing** for release.  
-- Utilized **Git** for version control, **Docker** for rapid deployment, and applied **Agile principles** for collaboration.  
+- Updated action-based policies for **Abi AI Assistant** to dynamically adjust recommendations based on user actions;  
+- Refactored initialization module with **Python**, reducing 80% of redundant code and improving maintainability;  
+- Designed **gRPC** interfaces and **ProtoBuf** between Abi and backend for structured data transmission;
+- Conducted **unit** and **integration tests** to support beta testing and debugging;
+- Utilized **Docker** and assisted in building **CI/CD** pipelines, cutting release time by 60%;
+- Applied **Git** for version control and followed **Agile principles** for efficient collaboration.
 
 **Junior Algorithm Intern** <span style="float: right;">2023.07 - 2023.09</span>  
 *Jiangsu Hongcheng Big Data Technology and Application Co., Ltd., Nanjing, China*	 

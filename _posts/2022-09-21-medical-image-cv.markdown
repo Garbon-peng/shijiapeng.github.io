@@ -6,5 +6,5 @@ category: ML
 excerpt: This project focuses on liver CT image segmentation using the U-Net model for training and optimization, achieving accuracy over 89%.
 image: public/img/medical_image_aided_diagnosis.jpg
 ---
-# post-sample
+Coming up soon ...
 
